@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { CommandLog } from "./POSComponents/CommandLog";
-import { ReceiptOutput } from "./POSComponents/RecieptOutput";
+import { ReceiptOutput } from "./POSComponents/ReceiptOutput";
 import { ReceiptInput } from "./POSComponents/ReceiptInput";
 
 const POS: React.FC = () => {

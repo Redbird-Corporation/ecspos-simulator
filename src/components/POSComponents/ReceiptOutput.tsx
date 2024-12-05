@@ -1,15 +1,15 @@
-import { pageSizeState } from "@/store/behaviourState";
+import { pageSizeState } from "../../store/behaviourState";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { QRCodePlaceholder } from "../qr/QR";
 import React, { useEffect } from "react";
-import { initialCommands } from "@/initial/initialCommands";
-import { parseCommands } from "@/functions/helperfunctions";
-import { ReceiptOutputProps } from "@/types";
+import { initialCommands } from "../../initial/initialCommands";
+import { parseCommands } from "../../functions/helperfunctions";
+import { ReceiptOutputProps } from "../../types";
 import {
   commandLogState,
   commandsState,
   receiptState,
-} from "@/store/receiptState";
+} from "../../store/receiptState";
 
 export const ReceiptOutput: React.FC<ReceiptOutputProps> = ({ receiptRef }) => {
   const [commands, setCommands] = useRecoilState(commandsState);

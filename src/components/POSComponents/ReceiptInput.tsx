@@ -1,11 +1,11 @@
-import { parseCommands } from "@/functions/helperfunctions";
-import { pageSizeState } from "@/store/behaviourState";
+import { parseCommands } from "../../functions/helperfunctions";
+import { pageSizeState } from "../../store/behaviourState";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   commandLogState,
   commandsState,
   receiptState,
-} from "@/store/receiptState";
+} from "../../store/receiptState";
 
 export const ReceiptInput = () => {
   const [commands, setCommands] = useRecoilState(commandsState);
@@ -24,9 +24,10 @@ export const ReceiptInput = () => {
   };
 
   return (
-    <div>
+    <>
       <h1 className="text-4xl text-black mb-8">ESC POS Emulator</h1>
       <textarea
+        data-testid="commandInput"
         className="w-96 h-40 p-2 mb-4 bg-white text-black border border-gray-400 rounded shadow focus:outline-none focus:border-blue-500"
         placeholder="Enter ECS POS commands"
         value={commands}
@@ -37,6 +38,7 @@ export const ReceiptInput = () => {
           Select Page Size:
         </label>
         <select
+          data-testid="pageSizeInp"
           id="pageSize"
           className="p-2 bg-white border border-gray-400 rounded"
           value={pageSize}
@@ -55,6 +57,6 @@ export const ReceiptInput = () => {
       >
         Generate Receipt
       </button>
-    </div>
+    </>
   );
 };

@@ -1,4 +1,4 @@
-import { commandLogState } from "@/store/receiptState";
+import { commandLogState } from "../../store/receiptState";
 import { useRecoilValue } from "recoil";
 
 export const CommandLog = () => {

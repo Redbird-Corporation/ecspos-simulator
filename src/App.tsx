@@ -1,4 +1,4 @@
-import POS from "@/components/POS";
+import POS from "./components/POS";
 import { RecoilRoot } from "recoil";
 
 function App() {

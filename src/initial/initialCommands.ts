@@ -24,4 +24,5 @@ Total:                           20.90
 Thank you for visiting The Cozy Corner Cafe!
 LF
 LF
-ESC d 3`;
+ESC d 3
+GS ( k 3`;
