@@ -1,4 +1,7 @@
-import { parseCommands } from "../../functions/helperfunctions";
+import {
+  parsePrintReceipt,
+  // sendPrinterCommands,
+} from "../../functions/printerFunctions";
 import { pageSizeState } from "../../store/behaviourState";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import {
@@ -6,6 +9,8 @@ import {
   commandsState,
   receiptState,
 } from "../../store/receiptState";
+import { ActionButton } from "../common/ActionButton";
+import { parseCommands } from "../../functions/commandHandlers";
 
 export const ReceiptInput = () => {
   const [commands, setCommands] = useRecoilState(commandsState);
@@ -21,6 +26,10 @@ export const ReceiptInput = () => {
 
   const handleParseCommands = (cmds: string) => {
     parseCommands(cmds, setReceipt, setCommandLog);
+  };
+
+  const handlePrintReceipt = (cmds: string) => {
+    parsePrintReceipt(cmds, parseInt(pageSize));
   };
 
   return (
@@ -49,14 +58,22 @@ export const ReceiptInput = () => {
           <option value="112mm">112mm</option>
         </select>
       </div>
-      <button
-        className="px-4 py-2 mb-4 bg-blue-600 text-white rounded shadow hover:bg-blue-700"
-        onClick={() => {
-          handleParseCommands(commands);
-        }}
-      >
-        Generate Receipt
-      </button>
+      <div className="flex gap-4">
+        <ActionButton
+          onClick={() => {
+            handleParseCommands(commands);
+          }}
+        >
+          Generate Receipt
+        </ActionButton>
+        <ActionButton
+          onClick={() => {
+            handlePrintReceipt(commands);
+          }}
+        >
+          Print Receipt
+        </ActionButton>
+      </div>
     </>
   );
 };

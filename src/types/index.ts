@@ -8,3 +8,8 @@ export interface ReceiptItem {
 export interface ReceiptOutputProps {
   receiptRef: React.RefObject<HTMLDivElement>;
 }
+
+export interface ReceiptPrintProps {
+  type: string;
+  text?: string;
+}
