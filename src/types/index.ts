@@ -33,5 +33,4 @@ export interface CommandListElementProps {
     cmd: string;
     info: string;
   };
-  index: number;
 }

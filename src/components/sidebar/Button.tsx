@@ -8,7 +8,7 @@ export const Button: React.FC<SideBarBtnProps> = ({
 }) => {
   return (
     <button className={`h-${height} w-${width} `} onClick={onClick}>
-      <img src={src} />
+      <img className={`h-6 w-6`} src={src} />
     </button>
   );
 };

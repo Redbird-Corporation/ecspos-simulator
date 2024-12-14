@@ -12,7 +12,7 @@ export const CommandDirectory = () => {
         className="bg-white space-y-1 divide-y rounded-sm overflow-y-auto overflow-x-hidden max-h-96"
       >
         {commandList.map((command, index) => {
-          return <CommandListElement command={command} index={index} />;
+          return <CommandListElement command={command} key={index} />;
         })}
       </div>
     </div>
