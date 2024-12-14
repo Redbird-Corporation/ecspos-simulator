@@ -61,7 +61,7 @@ const connectPrinterAndPrint = async (data: Uint8Array) => {
     port = await window.navigator.serial.requestPort();
     await port.open({ baudRate: 9600 });
   } catch (e) {
-    console.log(e);
+    console.log(e.InvalidStateError);
     if (e) {
       alert("Cannot connect to Printer");
     }
