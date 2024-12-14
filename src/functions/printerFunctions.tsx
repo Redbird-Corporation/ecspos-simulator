@@ -59,16 +59,14 @@ const connectPrinterAndPrint = async (data: Uint8Array) => {
   let port;
   try {
     port = await window.navigator.serial.requestPort();
-    await port.open({ baudRate: 9600 });
   } catch (e: any) {
-    console.log(
-      e ===
-        "InvalidStateError: Failed to execute 'open' on 'SerialPort': The port is already open."
-    );
-    if (e) {
-      alert("Cannot connect to Printer");
-    }
+    alert("Cannot connect to Printer");
     console.log(e);
+  }
+  try {
+    await port.open({ baudRate: 9600 });
+  } catch (e) {
+    console.log("Port already open");
   }
 
   const writer = port.writable?.getWriter();
