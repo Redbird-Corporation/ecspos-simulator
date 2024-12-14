@@ -46,11 +46,7 @@ const sendPrinterCommands = async (
         if (printCmd.type === "Line") {
           return <Line key={index} />;
         } else if (printCmd.type === "Text") {
-          return (
-            <Text key={index}>
-              {printCmd.text}
-            </Text>
-          );
+          return <Text key={index}>{printCmd.text}</Text>;
         }
       })}
     </Printer>
@@ -65,7 +61,10 @@ const connectPrinterAndPrint = async (data: Uint8Array) => {
     port = await window.navigator.serial.requestPort();
     await port.open({ baudRate: 9600 });
   } catch (e) {
-    alert("Cannot connect to Printer");
+    console.log(e);
+    if (e) {
+      alert("Cannot connect to Printer");
+    }
     console.log(e);
   }
 
