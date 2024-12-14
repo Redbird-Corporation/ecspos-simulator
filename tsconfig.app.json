@@ -29,5 +29,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/types", "../thermal_printer/SideBar.test.tsx"]
+  "include": ["src", "src/types"]
 }
