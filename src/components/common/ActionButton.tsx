@@ -1,9 +1,4 @@
-import React, { ReactNode, MouseEventHandler } from "react";
-
-interface ActionButtonProps {
-  children: ReactNode;
-  onClick: MouseEventHandler<HTMLButtonElement>;
-}
+import { ActionButtonProps } from "../../types";
 
 export const ActionButton: React.FC<ActionButtonProps> = ({
   children,
