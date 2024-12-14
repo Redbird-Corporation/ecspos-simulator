@@ -47,9 +47,5 @@ export const commandListState = atom({
       cmd: "GS ( k 3/{n}",
       info: "Generate QR Code, {n is a number}",
     },
-    {
-      cmd: "LF",
-      info: "New Line",
-    },
   ],
 });
