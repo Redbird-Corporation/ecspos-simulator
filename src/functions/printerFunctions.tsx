@@ -46,7 +46,11 @@ const sendPrinterCommands = async (
         if (printCmd.type === "Line") {
           return <Line key={index} />;
         } else if (printCmd.type === "Text") {
-          return <Text key={index}>{printCmd.text}</Text>;
+          if (printCmd.text?.includes("--------")) {
+            return <Line />;
+          } else {
+            return <Text key={index}>{printCmd.text}</Text>;
+          }
         }
       })}
     </Printer>
