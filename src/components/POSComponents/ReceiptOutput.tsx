@@ -3,13 +3,13 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { QRCodePlaceholder } from "../qr/QR";
 import React, { useEffect } from "react";
 import { initialCommands } from "../../initial/initialCommands";
-import { parseCommands } from "../../functions/helperfunctions";
 import { ReceiptOutputProps } from "../../types";
 import {
   commandLogState,
   commandsState,
   receiptState,
 } from "../../store/receiptState";
+import { parseCommands } from "../../functions/commandHandlers";
 
 export const ReceiptOutput: React.FC<ReceiptOutputProps> = ({ receiptRef }) => {
   const [commands, setCommands] = useRecoilState(commandsState);

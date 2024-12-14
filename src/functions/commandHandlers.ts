@@ -1,5 +1,6 @@
 import { ReceiptItem } from "@/types";
 import { SetterOrUpdater } from "recoil";
+import React from "react";
 
 export const handleGSCommands = (
   args: string[],
