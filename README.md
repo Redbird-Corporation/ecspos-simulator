@@ -47,7 +47,7 @@ The ESC/POS Printer Emulator is a development tool that simulates thermal receip
 
 ```bash
 # Clone the repository
-git clone https://github.com/Redbird-Corporation/ecspos-emulator.git
+git clone https://github.com/Redbird-Corporation/ecspos-simulator.git
 
 # Navigate to project directory
 cd ecspos-emulator
